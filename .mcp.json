@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "google-workspace": {
+      "command": "uvx",
+      "args": ["workspace-mcp", "--tool-tier", "full"],
+      "env": {
+        "GOOGLE_OAUTH_CLIENT_ID": "${GOOGLE_OAUTH_CLIENT_ID}",
+        "GOOGLE_OAUTH_CLIENT_SECRET": "${GOOGLE_OAUTH_CLIENT_SECRET}"
+      }
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "canva": {
+      "type": "http",
+      "url": "https://mcp.canva.com/mcp"
+    }
+  }
+}

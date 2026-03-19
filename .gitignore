@@ -1,0 +1,31 @@
+# Auth tokens saved after OAuth login
+.env.local
+.env
+*.token
+*.tokens
+token.json
+tokens.json
+credentials.json
+client_secret*.json
+gcp_credentials.json
+
+# workspace-mcp stores OAuth tokens here
+.workspace_mcp/
+workspace_mcp_tokens/
+
+# Common token cache directories
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Python virtual envs
+.venv/
+venv/
+env/
