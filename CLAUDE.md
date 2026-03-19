@@ -1,6 +1,25 @@
 # MCP Integrations
 
-This project configures Claude Code with three MCP servers, giving Claude access to Google Workspace, GitHub, and Canva.
+This project configures Claude Code with MCP servers for Google Workspace, GitHub, Canva, and browser automation via Playwright.
+
+---
+
+## Playwright Browser (`playwright`)
+
+**Package:** `@playwright/mcp`
+**Auth:** None required
+**Use for:** Letting Claude control a browser — navigate pages, click buttons, fill forms, take screenshots
+
+### What Claude can do
+- Navigate to any URL
+- Click, type, scroll on any webpage
+- Take screenshots of what it sees
+- Fill out and submit forms
+
+### How to use
+- "Go to console.cloud.google.com and set up OAuth credentials for me"
+- "Screenshot my Canva dashboard"
+- "Fill out this form at [url]"
 
 ---
 

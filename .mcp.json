@@ -1,5 +1,9 @@
 {
   "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
     "google-workspace": {
       "command": "uvx",
       "args": ["workspace-mcp", "--tool-tier", "full"],
