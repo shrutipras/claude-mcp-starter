@@ -50,6 +50,23 @@ Playwright has full browser control. Anything visible on screen passes through t
 **Auth:** Browser OAuth via Google Cloud Console credentials
 **Covers:** Gmail, Drive, Docs, Sheets, Slides, Calendar, Tasks, Contacts
 
+### SECURITY RULES — MANDATORY
+
+**Always ask for explicit user confirmation before:**
+- Sending, replying to, or forwarding any email
+- Deleting any email, file, or Drive item
+- Sharing or changing permissions on any Doc, Sheet, Slide, or Drive file
+- Creating or modifying calendar events that invite other people
+- Uploading files to Drive
+
+**NEVER:**
+- Bulk delete emails, files, or Drive items
+- Share documents publicly or change visibility without explicit permission
+- Send emails to recipients the user did not specify
+- Access or display sensitive email content unnecessarily
+
+Draft actions (creating a doc, drafting an email) are fine without confirmation. Any action that **sends, deletes, or shares** requires the user to say yes first.
+
 ### What Claude can do
 - Read and send emails, search Gmail
 - Create, read, edit, and share Google Docs / Sheets / Slides
@@ -73,6 +90,25 @@ See **Google Cloud Console Setup** in `README.md`.
 **Endpoint:** `https://api.githubcopilot.com/mcp/` (official GitHub remote server)
 **Auth:** Browser OAuth via GitHub Copilot
 **Requires:** GitHub Copilot subscription
+
+### SECURITY RULES — MANDATORY
+
+**Always ask for explicit user confirmation before:**
+- Pushing code or force-pushing to any branch
+- Creating, closing, or merging pull requests
+- Creating, closing, or commenting on issues (these are public-facing)
+- Deleting branches or repositories
+- Creating forks or public gists
+- Changing repository visibility or settings
+
+**NEVER:**
+- Push to `main`/`master` without explicit permission
+- Force-push to any shared branch
+- Delete repositories or branches without confirmation
+- Make private repos public
+- Create public gists containing project code without permission
+
+Reading repos, branches, code, and commit history is fine without confirmation. Any action that **modifies, publishes, or deletes** requires the user to say yes first.
 
 ### What Claude can do
 - Read, create, and update issues and pull requests
@@ -104,6 +140,24 @@ See **Google Cloud Console Setup** in `README.md`.
 - "Find my Instagram post designs in Canva"
 - "Create a new presentation using the 'Minimal' template"
 - "Export my latest Canva design as a PDF"
+
+---
+
+## General Security Rules — ALL MCP Servers
+
+These rules apply across every MCP integration:
+
+**Credential hygiene:**
+- NEVER log, echo, print, or write secrets, tokens, API keys, or passwords to any file that isn't in `.gitignore`
+- NEVER commit `.env`, `.env.local`, `credentials.json`, `token.json`, or any file containing secrets
+- If you encounter a secret in output or a file, do NOT repeat it back — warn the user instead
+
+**Destructive actions:**
+- NEVER bulk delete anything (files, emails, repos, designs) without explicit confirmation
+- NEVER auto-share or change visibility/permissions on any resource without explicit permission
+- NEVER perform irreversible actions without confirming with the user first
+
+**When in doubt, ask.** It is always better to pause and confirm than to take an action that cannot be undone.
 
 ---
 
