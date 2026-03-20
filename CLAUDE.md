@@ -10,16 +10,37 @@ This project configures Claude Code with MCP servers for Google Workspace, GitHu
 **Auth:** None required
 **Use for:** Letting Claude control a browser — navigate pages, click buttons, fill forms, take screenshots
 
+### SECURITY RULES — MANDATORY
+
+Playwright has full browser control. Anything visible on screen passes through the conversation context, and we cannot guarantee how data is handled on the backend. The following rules are **non-negotiable**:
+
+**NEVER use Playwright for:**
+- Email (Gmail, Outlook, etc.) — no reading, sending, or viewing
+- Banking, financial, or payment sites
+- Credential/admin pages (OAuth secrets, API keys, tokens, passwords)
+- Any page where personal, private, or confidential information is visible
+- Anything medium-to-high sensitivity
+
+**Playwright is ONLY allowed for:**
+- Public websites and documentation
+- Local development servers (localhost)
+- Non-sensitive, non-confidential content (e.g. a public Google Doc)
+- UI testing and screenshots of non-sensitive pages
+
+**If a task involves sensitive data, instruct the user to do it manually.** This is a hard rule. When in doubt, refuse and suggest the manual approach.
+
+**Before every Playwright action**, describe what you will navigate to and click so the user can review and approve.
+
 ### What Claude can do
-- Navigate to any URL
-- Click, type, scroll on any webpage
-- Take screenshots of what it sees
-- Fill out and submit forms
+- Navigate to non-sensitive URLs
+- Click, type, scroll on non-sensitive webpages
+- Take screenshots of non-sensitive pages
+- Fill out and submit forms on non-sensitive pages
 
 ### How to use
-- "Go to console.cloud.google.com and set up OAuth credentials for me"
-- "Screenshot my Canva dashboard"
-- "Fill out this form at [url]"
+- "Go to the Tailwind docs and find the flex layout examples"
+- "Screenshot my localhost:3000 app"
+- "Fill out this public form at [url]"
 
 ---
 
