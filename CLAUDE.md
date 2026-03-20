@@ -130,6 +130,15 @@ Reading repos, branches, code, and commit history is fine without confirmation. 
 **Auth:** Browser OAuth via Canva account
 **No API key required**
 
+### SECURITY RULES — MANDATORY
+
+**Always ask for explicit user confirmation before:**
+- Deleting any design
+- Exporting or publishing designs (exports may be shared or cached externally)
+- Modifying existing designs (edits may not be easily reversible)
+
+Searching and browsing designs is fine without confirmation.
+
 ### What Claude can do
 - Search your existing Canva designs
 - Create new designs from templates
@@ -156,6 +165,15 @@ These rules apply across every MCP integration:
 - NEVER bulk delete anything (files, emails, repos, designs) without explicit confirmation
 - NEVER auto-share or change visibility/permissions on any resource without explicit permission
 - NEVER perform irreversible actions without confirming with the user first
+
+**Batch operation limits:**
+- Never perform actions on more than 5 items at once without first listing all items and getting explicit user approval
+- This applies to deleting, sharing, modifying, closing, or any other bulk operation across all MCP servers
+
+**Data minimization:**
+- Only access the specific resources needed for the current task
+- Do not browse, read, or fetch emails, files, repos, or designs beyond what the user asked for
+- Do not proactively read or summarize content the user did not request
 
 **When in doubt, ask.** It is always better to pause and confirm than to take an action that cannot be undone.
 
